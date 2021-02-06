@@ -15,6 +15,7 @@
           @keypress="fetchWeather"
         />
       </div>
+
       <div class="weather-wrap" v-if="typeof weather.main !== 'undefined'">
         <div class="location-box">
           <div class="location">
@@ -37,7 +38,7 @@ export default {
   name: "App",
   data() {
     return {
-      api_key: "",
+      api_key: process.env.VUE_APP_API_KEY,
       url_base: "https://api.openweathermap.org/data/2.5/",
       query: "",
       weather: {},
